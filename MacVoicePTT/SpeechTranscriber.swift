@@ -16,6 +16,7 @@ enum SpeechTranscriberError: LocalizedError {
 }
 
 final class SpeechTranscriber {
+    private let recognitionTimeout: TimeInterval = 30
     private var activeTask: SFSpeechRecognitionTask?
 
     func transcribeFile(at url: URL) async throws -> String {
@@ -29,21 +30,39 @@ final class SpeechTranscriber {
         request.shouldReportPartialResults = false
 
         return try await withCheckedThrowingContinuation { continuation in
+            let lock = NSLock()
             var didResume = false
 
-            self.activeTask = recognizer.recognitionTask(with: request) { result, error in
-                if let error, !didResume {
-                    didResume = true
-                    self.activeTask = nil
+            func resumeOnce(with result: Result<String, Error>) {
+                lock.lock()
+                defer { lock.unlock() }
+
+                guard !didResume else { return }
+                didResume = true
+                self.activeTask = nil
+
+                switch result {
+                case .success(let transcript):
+                    continuation.resume(returning: transcript)
+                case .failure(let error):
                     continuation.resume(throwing: error)
+                }
+            }
+
+            self.activeTask = recognizer.recognitionTask(with: request) { result, error in
+                if let error {
+                    resumeOnce(with: .failure(error))
                     return
                 }
 
-                if let result, result.isFinal, !didResume {
-                    didResume = true
-                    self.activeTask = nil
-                    continuation.resume(returning: result.bestTranscription.formattedString)
+                if let result, result.isFinal {
+                    resumeOnce(with: .success(result.bestTranscription.formattedString))
                 }
+            }
+
+            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + self.recognitionTimeout) {
+                self.activeTask?.cancel()
+                resumeOnce(with: .failure(SpeechTranscriberError.noRecognitionResult))
             }
         }
     }

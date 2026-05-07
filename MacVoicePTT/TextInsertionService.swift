@@ -9,6 +9,8 @@ enum TextInsertionOutcome {
 }
 
 final class TextInsertionService {
+    private let pasteboardPropagationDelay: TimeInterval = 0.12
+
     func insert(_ text: String) -> TextInsertionOutcome {
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(text, forType: .string)
@@ -24,7 +26,8 @@ final class TextInsertionService {
         commandVDown?.flags = .maskCommand
         commandVUp?.flags = .maskCommand
 
-        Thread.sleep(forTimeInterval: 0.12)
+        // Give the pasteboard a brief moment to publish the new text before sending Command-V.
+        Thread.sleep(forTimeInterval: pasteboardPropagationDelay)
         commandVDown?.post(tap: .cghidEventTap)
         commandVUp?.post(tap: .cghidEventTap)
 
