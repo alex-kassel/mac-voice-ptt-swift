@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000000000000000000000101 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* Main.swift */; };
+		000000000000000000000102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000002 /* AppDelegate.swift */; };
+		000000000000000000000103 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000003 /* HotkeyManager.swift */; };
+		000000000000000000000104 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000004 /* AudioRecorderService.swift */; };
+		000000000000000000000105 /* SpeechTranscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000005 /* SpeechTranscriber.swift */; };
+		000000000000000000000106 /* TextInsertionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000006 /* TextInsertionService.swift */; };
+		000000000000000000000107 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000007 /* PermissionManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000001 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		000000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		000000000000000000000003 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		000000000000000000000004 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		000000000000000000000005 /* SpeechTranscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTranscriber.swift; sourceTree = "<group>"; };
+		000000000000000000000006 /* TextInsertionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInsertionService.swift; sourceTree = "<group>"; };
+		000000000000000000000007 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		000000000000000000000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000000000000000000000009 /* MacVoicePTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVoicePTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000000000000000000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000301 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000302 /* MacVoicePTT */,
+				000000000000000000000303 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000302 /* MacVoicePTT */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000001 /* Main.swift */,
+				000000000000000000000002 /* AppDelegate.swift */,
+				000000000000000000000003 /* HotkeyManager.swift */,
+				000000000000000000000004 /* AudioRecorderService.swift */,
+				000000000000000000000005 /* SpeechTranscriber.swift */,
+				000000000000000000000006 /* TextInsertionService.swift */,
+				000000000000000000000007 /* PermissionManager.swift */,
+				000000000000000000000008 /* Info.plist */,
+			);
+			path = MacVoicePTT;
+			sourceTree = "<group>";
+		};
+		000000000000000000000303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000009 /* MacVoicePTT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000401 /* MacVoicePTT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000501 /* Build configuration list for PBXNativeTarget "MacVoicePTT" */;
+			buildPhases = (
+				000000000000000000000601 /* Sources */,
+				000000000000000000000201 /* Frameworks */,
+				000000000000000000000602 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacVoicePTT;
+			productName = MacVoicePTT;
+			productReference = 000000000000000000000009 /* MacVoicePTT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000402 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					000000000000000000000401 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 000000000000000000000502 /* Build configuration list for PBXProject "MacVoicePTT" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000301;
+			productRefGroup = 000000000000000000000303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000000000000000000000401 /* MacVoicePTT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000000000000000000000602 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000000000000000000000601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000102 /* AppDelegate.swift in Sources */,
+				000000000000000000000104 /* AudioRecorderService.swift in Sources */,
+				000000000000000000000103 /* HotkeyManager.swift in Sources */,
+				000000000000000000000101 /* Main.swift in Sources */,
+				000000000000000000000107 /* PermissionManager.swift in Sources */,
+				000000000000000000000105 /* SpeechTranscriber.swift in Sources */,
+				000000000000000000000106 /* TextInsertionService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		000000000000000000000701 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		000000000000000000000702 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		000000000000000000000703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacVoicePTT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkassel.macvoiceptt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		000000000000000000000704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacVoicePTT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkassel.macvoiceptt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000000000000000000000501 /* Build configuration list for PBXNativeTarget "MacVoicePTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000703 /* Debug */,
+				000000000000000000000704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000502 /* Build configuration list for PBXProject "MacVoicePTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000701 /* Debug */,
+				000000000000000000000702 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000402 /* Project object */;
+}
