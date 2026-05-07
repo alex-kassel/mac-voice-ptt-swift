@@ -32,6 +32,7 @@ final class SpeechTranscriber {
         return try await withCheckedThrowingContinuation { continuation in
             let lock = NSLock()
             var didResume = false
+            var timeoutWorkItem: DispatchWorkItem?
 
             func resumeOnce(with result: Result<String, Error>) {
                 lock.lock()
@@ -40,6 +41,7 @@ final class SpeechTranscriber {
                 guard !didResume else { return }
                 didResume = true
                 self.activeTask = nil
+                timeoutWorkItem?.cancel()
 
                 switch result {
                 case .success(let transcript):
@@ -60,10 +62,12 @@ final class SpeechTranscriber {
                 }
             }
 
-            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + self.recognitionTimeout) {
+            let workItem = DispatchWorkItem {
                 self.activeTask?.cancel()
                 resumeOnce(with: .failure(SpeechTranscriberError.noRecognitionResult))
             }
+            timeoutWorkItem = workItem
+            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + self.recognitionTimeout, execute: workItem)
         }
     }
 }

@@ -169,7 +169,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 self.lastTranscript = cleanedTranscript
                 self.copyLastTranscriptMenuItem.isEnabled = true
 
-                switch self.textInsertionService.insert(cleanedTranscript) {
+                switch await self.textInsertionService.insert(cleanedTranscript) {
                 case .pasted:
                     self.updateStatus(indicator: "PTT", detail: "Transcript pasted into the active app.")
                 case .copiedToClipboard:
